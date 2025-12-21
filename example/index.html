@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-br" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Empresas • 2º A e 2º B</title>
+    <meta name="description" content="Diretório moderno das empresas das turmas 2º A e 2º B, com links e contatos." />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="assets/js/tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body class="bg-slate-950 text-slate-100 min-h-screen">
+    <!-- Background decoration -->
+    <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10">
+      <div class="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-gradient-to-br from-cyan-500/20 via-fuchsia-500/20 to-indigo-500/20 blur-3xl"></div>
+      <div class="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-gradient-to-tr from-emerald-500/15 via-sky-500/15 to-violet-500/15 blur-3xl"></div>
+      <div class="absolute inset-0 bg-grid opacity-20"></div>
+    </div>
+
+    <!-- Nav -->
+    <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-slate-950/60 border-b border-white/10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between py-3">
+          <a href="#" class="flex items-center gap-2 font-semibold tracking-tight">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-brand-500 via-indigo-500 to-fuchsia-500 text-white shadow-glow">
+              <i class="ri-building-2-line"></i>
+            </span>
+            <span class="text-slate-100">Empresas 2º A e 2º B</span>
+          </a>
+          <nav class="hidden md:flex items-center gap-4 text-sm">
+            <a href="#turma-2a" class="hover:text-brand-300 transition-colors">2º A</a>
+            <a href="#turma-2b" class="hover:text-brand-300 transition-colors">2º B</a>
+            <a href="#fornecedores" class="hover:text-brand-300 transition-colors">Fornecedores</a>
+          </nav>
+          <button id="toggle-dark" class="inline-flex items-center gap-2 rounded-md border border-white/10 px-3 py-1.5 text-sm hover:bg-white/5">
+            <i class="ri-moon-line"></i>
+            <span>Modo</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="grid gap-6 md:grid-cols-2 md:items-center">
+          <div data-aos="fade-up" data-aos-delay="50">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
+              Diretório de Empresas
+              <span class="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-fuchsia-400">Turmas 2º A e 2º B</span>
+            </h1>
+            <p class="mt-4 text-slate-300 max-w-prose">
+              Explore as empresas das duas turmas, com links para Trello, sites, emails e mais. Use a busca para filtrar por nome.
+            </p>
+            <div class="mt-6 flex flex-wrap items-center gap-3 text-sm">
+              <a href="#turma-2a" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-500 to-fuchsia-500 px-4 py-2 font-medium shadow-glow">
+                <i class="ri-group-line"></i> Ver 2º A
+              </a>
+              <a href="#turma-2b" class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 hover:bg-white/15">
+                <i class="ri-group-2-line"></i> Ver 2º B
+              </a>
+            </div>
+          </div>
+          <div class="md:justify-self-end" data-aos="fade-up" data-aos-delay="150">
+            <div class="glass ring-gradient rounded-2xl p-6 shadow-xl">
+              <div class="flex items-center gap-4">
+                <div class="h-14 w-14 rounded-xl bg-gradient-to-br from-cyan-400 via-indigo-400 to-fuchsia-400"></div>
+                <div>
+                  <p class="text-sm text-slate-300">Status</p>
+                  <p class="text-lg font-semibold">Empresas ativas e conectadas</p>
+                </div>
+              </div>
+              <dl class="mt-6 grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <dt class="text-xs text-slate-400">Turmas</dt>
+                  <dd class="text-2xl font-bold">2</dd>
+                </div>
+                <div>
+                  <dt class="text-xs text-slate-400">Empresas listadas</dt>
+                  <dd class="text-2xl font-bold">10</dd>
+                </div>
+                <div>
+                  <dt class="text-xs text-slate-400">Links úteis</dt>
+                  <dd class="text-2xl font-bold">18+</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search -->
+        <div class="mt-10" data-aos="fade-up" data-aos-delay="250">
+          <label for="filter" class="sr-only">Buscar empresa</label>
+          <div class="relative max-w-2xl">
+            <i class="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+            <input id="filter" type="text" placeholder="Buscar empresa por nome..." class="w-full rounded-lg border border-white/10 bg-white/5 py-3 pl-10 pr-4 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: 2º A -->
+    <section id="turma-2a" class="py-10 sm:py-14">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-6 flex flex-col gap-2" data-aos="fade-up">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Turma 2º A</h2>
+          <div class="h-px w-full bg-gradient-to-r from-white/15 via-white/10 to-transparent"></div>
+        </div>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-section="turma-2a"></div>
+      </div>
+    </section>
+
+    <!-- Section: 2º B -->
+    <section id="turma-2b" class="py-10 sm:py-14">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-6 flex flex-col gap-2" data-aos="fade-up">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Turma 2º B</h2>
+          <div class="h-px w-full bg-gradient-to-r from-white/15 via-white/10 to-transparent"></div>
+        </div>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-section="turma-2b"></div>
+      </div>
+    </section>
+
+    <!-- Section: Fornecedores -->
+    <section id="fornecedores" class="py-10 sm:py-14">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-6 flex items-center justify-between" data-aos="fade-up">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Fornecedores</h2>
+        </div>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-section="fornecedores"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-8 text-center text-sm text-slate-400">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <p>Atualizado com Tailwind + AOS • Feito com carinho para as turmas 2º A e 2º B</p>
+      </div>
+    </footer>
+
+    <script defer src="assets/js/data.js"></script>
+    <script defer src="assets/js/components.js"></script>
+    <script defer src="assets/js/main.js"></script>
+  </body>
+  </html>
