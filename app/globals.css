@@ -75,6 +75,16 @@ body {
   color: transparent;
 }
 
+.material-symbols-rounded {
+  font-family: "Material Symbols Rounded";
+  font-style: normal;
+  font-weight: 400;
+  display: inline-flex;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
 .section-divider {
   background: linear-gradient(
     90deg,

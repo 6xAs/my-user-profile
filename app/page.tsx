@@ -2,7 +2,6 @@ import AboutSection from "./components/AboutSection";
 import ContactSection from "./components/ContactSection";
 import ExperienceSection from "./components/ExperienceSection";
 import ProfileHeaderSection from "./components/ProfileHeaderSection";
-import ProfileSidebar from "./components/ProfileSidebar";
 import ProjectsSection from "./components/ProjectsSection";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
@@ -20,28 +19,33 @@ export default function Home() {
 
       <SiteHeader name={profileData.name} />
 
-      <main className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[0.38fr_0.62fr] lg:gap-12 lg:px-8 lg:py-16">
-        <ProfileSidebar
-          name={profileData.name}
-          role={profileData.role}
-          location={profileData.location}
-          availability={profileData.availability}
-          summary={profileData.summary}
-          email={profileData.contactEmail}
-          socialLinks={profileData.socialLinks}
-        />
+      <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="space-y-12">
-          <ProfileHeaderSection
-            status={profileData.status}
-            headlineLead={profileData.headlineLead}
-            headlineAccent={profileData.headlineAccent}
-            intro={profileData.intro}
-            highlights={profileData.highlights}
-            stats={profileData.stats}
+          <div className="w-full">
+            <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-0">
+              <ProfileHeaderSection
+                name={profileData.name}
+                role={profileData.role}
+                location={profileData.location}
+                avatarSrc={profileData.avatarSrc}
+                avatarAlt={profileData.avatarAlt}
+                status={profileData.status}
+                headlineLead={profileData.headlineLead}
+                headlineAccent={profileData.headlineAccent}
+                intro={profileData.intro}
+                highlights={profileData.highlights}
+                stats={profileData.stats}
+              />
+            </div>
+          </div>
+          <AboutSection
+            title={profileData.aboutTitle}
+            body={profileData.aboutBody}
+            mission={profileData.mission}
+            focus={profileData.aboutFocus}
           />
-          <AboutSection insights={profileData.insights} />
-          <StackSection stack={profileData.stack} />
-          <ExperienceSection timeline={profileData.timeline} />
+          <StackSection stackGroups={profileData.stackGroups} />
+          <ExperienceSection experience={profileData.experience} />
           <ProjectsSection
             projects={profileData.projects}
             categories={profileData.projectCategories}

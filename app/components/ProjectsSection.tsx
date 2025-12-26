@@ -25,6 +25,7 @@ export default function ProjectsSection({
         normalizedQuery.length === 0 ||
         project.title.toLowerCase().includes(normalizedQuery) ||
         project.description.toLowerCase().includes(normalizedQuery) ||
+        project.category.toLowerCase().includes(normalizedQuery) ||
         project.tags.some((tag) =>
           tag.toLowerCase().includes(normalizedQuery)
         );
@@ -38,8 +39,8 @@ export default function ProjectsSection({
       <div className="space-y-6 animate-fade-up">
         <SectionHeader
           eyebrow="Projetos"
-          title="Iniciativas recentes"
-          description="Cases que combinam desenvolvimento, dados e impacto para o negocio."
+          title="Projetos que conectam software, dados e processos"
+          description="Atuacao em ciencia de dados aplicada, automacoes, plataformas web e integracao de sistemas em contextos educacionais, governamentais e institucionais."
         />
         <div className="space-y-4">
           <div className="flex flex-wrap gap-2">
@@ -74,7 +75,16 @@ export default function ProjectsSection({
               key={item.title}
               className="glass rounded-2xl p-6 transition hover:-translate-y-1 hover:shadow-xl"
             >
-              <p className="text-base font-semibold text-white">{item.title}</p>
+              <div className="flex items-center gap-3">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
+                  <span className="material-symbols-rounded text-[20px]">
+                    {item.icon}
+                  </span>
+                </span>
+                <p className="text-base font-semibold text-white">
+                  {item.title}
+                </p>
+              </div>
               <p className="mt-3 text-sm text-slate-300">
                 {item.description}
               </p>
