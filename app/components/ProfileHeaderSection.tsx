@@ -68,9 +68,9 @@ export default function ProfileHeaderSection({
           <div className="grid gap-6 lg:grid-cols-3">
             {highlights.map((item) => (
               <div key={item.title} className="glass rounded-2xl p-6">
-                <div className="flex items-center justify-between gap-3">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
-                    <span className="material-symbols-rounded text-[20px]">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
+                    <span className="material-symbols-rounded text-[18px]">
                       {item.icon}
                     </span>
                   </span>
