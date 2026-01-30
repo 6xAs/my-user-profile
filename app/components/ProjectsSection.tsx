@@ -1,12 +1,22 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import type { ReactNode } from "react";
+import { MdCloud, MdHub, MdIntegrationInstructions, MdPublic, MdSwapHoriz } from "react-icons/md";
 import type { Project } from "../data/profile";
 import SectionHeader from "./SectionHeader";
 
 type ProjectsSectionProps = {
   projects: Project[];
   categories: string[];
+};
+
+const projectIconMap: Record<string, ReactNode> = {
+  cloud: <MdCloud className="text-lg" />,
+  hub: <MdHub className="text-lg" />,
+  public: <MdPublic className="text-lg" />,
+  integration_instructions: <MdIntegrationInstructions className="text-lg" />,
+  swap_horiz: <MdSwapHoriz className="text-lg" />,
 };
 
 export default function ProjectsSection({
@@ -77,9 +87,9 @@ export default function ProjectsSection({
             >
               <div className="flex items-center gap-3">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
-                  <span className="material-symbols-rounded text-[20px]">
-                    {item.icon}
-                  </span>
+                  {projectIconMap[item.icon] ?? (
+                    <MdCloud className="text-lg" />
+                  )}
                 </span>
                 <p className="text-base font-semibold text-white">
                   {item.title}

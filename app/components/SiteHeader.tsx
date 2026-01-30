@@ -1,3 +1,5 @@
+import { BiCode } from "react-icons/bi";
+
 type SiteHeaderProps = {
   name: string;
 };
@@ -8,7 +10,7 @@ export default function SiteHeader({ name }: SiteHeaderProps) {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-300 text-slate-900 shadow-glow">
-              <span className="material-symbols-rounded text-[20px]">code</span>
+              <BiCode className="text-[20px]" />
             </span>
             <div>
               <p className="text-sm text-slate-400">Perfil profissional</p>

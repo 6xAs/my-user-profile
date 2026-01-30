@@ -1,5 +1,7 @@
 import Image from "next/image";
 import type { Highlight, Stat } from "../data/profile";
+import type { ReactNode } from "react";
+import { MdAccountTree, MdInsights, MdTune } from "react-icons/md";
 import { SiGmail } from "react-icons/si";
 
 type ProfileHeaderSectionProps = {
@@ -14,6 +16,12 @@ type ProfileHeaderSectionProps = {
   intro: string;
   highlights: Highlight[];
   stats: Stat[];
+};
+
+const highlightIconMap: Record<string, ReactNode> = {
+  account_tree: <MdAccountTree className="text-xl" />,
+  insights: <MdInsights className="text-xl" />,
+  tune: <MdTune className="text-xl" />,
 };
 
 export default function ProfileHeaderSection({
@@ -70,9 +78,9 @@ export default function ProfileHeaderSection({
               <div key={item.title} className="glass rounded-2xl p-6">
                 <div className="flex items-center justify-between gap-2">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
-                    <span className="material-symbols-rounded text-[18px]">
-                      {item.icon}
-                    </span>
+                    {highlightIconMap[item.icon] ?? (
+                      <span className="text-[18px]">{item.icon}</span>
+                    )}
                   </span>
                   <span className="text-xs uppercase tracking-[0.3em] text-slate-400">
                     {item.level}

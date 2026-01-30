@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { useMemo, useState } from "react";
 import {
   DiCss3,
@@ -27,11 +28,14 @@ import {
 import {
   MdAnalytics,
   MdAssessment,
+  MdCode,
   MdDashboard,
+  MdEngineering,
   MdHandshake,
   MdInsights,
   MdIntegrationInstructions,
   MdLaptop,
+  MdQueryStats,
   MdScience,
   MdSchool,
   MdSportsEsports,
@@ -56,7 +60,7 @@ export default function StackSection({ stackGroups }: StackSectionProps) {
     stackGroups.find((group) => group.title === activeCategory) ??
     stackGroups[0];
 
-  const logoMap: Record<string, React.ReactNode> = {
+  const logoMap: Record<string, ReactNode> = {
     python: <DiPython className="text-lg" />,
     php: <DiPhp className="text-lg" />,
     javascript: <DiJavascript1 className="text-lg" />,
@@ -89,6 +93,13 @@ export default function StackSection({ stackGroups }: StackSectionProps) {
     integracao: <MdIntegrationInstructions className="text-lg" />,
   };
 
+  const groupIconMap: Record<string, ReactNode> = {
+    code: <MdCode className="text-lg" />,
+    query_stats: <MdQueryStats className="text-lg" />,
+    engineering: <MdEngineering className="text-lg" />,
+    school: <MdSchool className="text-lg" />,
+  };
+
   return (
     <section id="stack" className="space-y-6">
       <div className="space-y-6 animate-fade-up">
@@ -119,9 +130,9 @@ export default function StackSection({ stackGroups }: StackSectionProps) {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
-                    <span className="material-symbols-rounded text-[20px]">
-                      {activeGroup.icon}
-                    </span>
+                    {groupIconMap[activeGroup.icon] ?? (
+                      <MdCode className="text-lg" />
+                    )}
                   </span>
                   <p className="text-sm font-semibold text-white">
                     {activeGroup.title}
