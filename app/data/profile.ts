@@ -65,7 +65,7 @@ export const profileData: ProfileData = {
   role: "Analista Programador | Cientista de Dados",
   location: "Brasil · Remoto/Presencial",
   availability: "Disponivel para novos desafios",
-  avatarSrc: "/assets/images/foto_son_cut.PNG",
+  avatarSrc: "/assets/images/foto_son_cut.png",
   avatarAlt: "Foto de perfil de Anderson Seixas",
   status: "Disponivel para novos desafios",
   headlineLead: "Analista programador e",
