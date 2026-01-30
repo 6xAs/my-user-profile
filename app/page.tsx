@@ -52,13 +52,11 @@ export default function Home() {
           />
           <ContactSection
             email={profileData.contactEmail}
-            linkedInLabel={profileData.linkedInLabel}
-            linkedInUrl={profileData.linkedInUrl}
           />
         </div>
       </main>
 
-      <SiteFooter />
+      <SiteFooter email={profileData.contactEmail} />
     </div>
   );
 }

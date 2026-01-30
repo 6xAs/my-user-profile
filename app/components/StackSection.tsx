@@ -1,6 +1,42 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import {
+  DiCss3,
+  DiDocker,
+  DiHtml5,
+  DiJavascript1,
+  DiLinux,
+  DiMysql,
+  DiNginx,
+  DiPhp,
+  DiPython,
+} from "react-icons/di";
+import {
+  SiApacheairflow,
+  SiBootstrap,
+  SiFirebase,
+  SiGithub,
+  SiN8N,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiGit,
+} from "react-icons/si";
+import {
+  MdAnalytics,
+  MdAssessment,
+  MdDashboard,
+  MdHandshake,
+  MdInsights,
+  MdIntegrationInstructions,
+  MdLaptop,
+  MdScience,
+  MdSchool,
+  MdSportsEsports,
+  MdTrendingUp,
+} from "react-icons/md";
 import SectionHeader from "./SectionHeader";
 import type { StackGroup } from "../data/profile";
 
@@ -19,6 +55,39 @@ export default function StackSection({ stackGroups }: StackSectionProps) {
   const activeGroup =
     stackGroups.find((group) => group.title === activeCategory) ??
     stackGroups[0];
+
+  const logoMap: Record<string, React.ReactNode> = {
+    python: <DiPython className="text-lg" />,
+    php: <DiPhp className="text-lg" />,
+    javascript: <DiJavascript1 className="text-lg" />,
+    typescript: <SiTypescript className="text-lg" />,
+    "node.js": <SiNodedotjs className="text-lg" />,
+    html5: <DiHtml5 className="text-lg" />,
+    css3: <DiCss3 className="text-lg" />,
+    bootstrap: <SiBootstrap className="text-lg" />,
+    tailwind: <SiTailwindcss className="text-lg" />,
+    "next.js": <SiNextdotjs className="text-lg" />,
+    mysql: <DiMysql className="text-lg" />,
+    docker: <DiDocker className="text-lg" />,
+    linux: <DiLinux className="text-lg" />,
+    nginx: <DiNginx className="text-lg" />,
+    airflow: <SiApacheairflow className="text-lg" />,
+    n8n: <SiN8N className="text-lg" />,
+    firebase: <SiFirebase className="text-lg" />,
+    git: <SiGit className="text-lg" />,
+    github: <SiGithub className="text-lg" />,
+    gamificacao: <MdSportsEsports className="text-lg" />,
+    metodologias: <MdSchool className="text-lg" />,
+    projetos: <MdHandshake className="text-lg" />,
+    plataformas: <MdLaptop className="text-lg" />,
+    divulgacao: <MdScience className="text-lg" />,
+    ciencia: <MdAnalytics className="text-lg" />,
+    eda: <MdInsights className="text-lg" />,
+    dashboards: <MdDashboard className="text-lg" />,
+    modelagem: <MdTrendingUp className="text-lg" />,
+    indicadores: <MdAssessment className="text-lg" />,
+    integracao: <MdIntegrationInstructions className="text-lg" />,
+  };
 
   return (
     <section id="stack" className="space-y-6">
@@ -66,6 +135,11 @@ export default function StackSection({ stackGroups }: StackSectionProps) {
                     key={item.name}
                     className="rounded-2xl border border-white/10 bg-white/5 p-4"
                   >
+                    {item.icon && (
+                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">
+                        {logoMap[item.icon] ?? item.icon}
+                      </span>
+                    )}
                     <div className="flex items-center justify-between text-xs text-slate-400">
                       <span>Score</span>
                       <span>{item.score}</span>

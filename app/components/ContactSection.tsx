@@ -1,14 +1,8 @@
 type ContactSectionProps = {
   email: string;
-  linkedInLabel: string;
-  linkedInUrl: string;
 };
 
-export default function ContactSection({
-  email,
-  linkedInLabel,
-  linkedInUrl,
-}: ContactSectionProps) {
+export default function ContactSection({ email }: ContactSectionProps) {
   return (
     <section id="contato" className="space-y-6">
       <div className="glass ring-gradient rounded-3xl p-8 text-center animate-fade-in">
@@ -25,15 +19,9 @@ export default function ContactSection({
         <div className="mt-6 flex flex-wrap justify-center gap-3 text-sm">
           <a
             href={`mailto:${email}`}
-            className="inline-flex items-center gap-2 rounded-full bg-white/10 px-5 py-2 font-medium text-slate-100 transition hover:bg-white/20"
+            className="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-5 py-2 font-medium text-slate-950 transition hover:brightness-110"
           >
             {email}
-          </a>
-          <a
-            href={linkedInUrl}
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2 font-medium text-slate-100 transition hover:border-white/40"
-          >
-            {linkedInLabel}
           </a>
         </div>
       </div>

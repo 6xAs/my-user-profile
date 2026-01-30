@@ -1,7 +1,8 @@
 import SectionHeader from "./SectionHeader";
+import type { ExperienceEntry } from "../data/profile";
 
 type ExperienceSectionProps = {
-  experience: string[];
+  experience: ExperienceEntry[];
 };
 
 export default function ExperienceSection({ experience }: ExperienceSectionProps) {
@@ -13,15 +14,22 @@ export default function ExperienceSection({ experience }: ExperienceSectionProps
           title="Onde a teoria vira entrega"
           description="Experiencia real construindo software, dados e processos que funcionam fora do papel."
         />
-        <div className="glass rounded-2xl p-6">
-          <ul className="space-y-3 text-sm text-slate-300">
-            {experience.map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-300" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+        <div className="glass rounded-2xl p-6 space-y-6 text-sm text-slate-300">
+          {experience.map((entry) => (
+            <div
+              key={entry.title}
+              className="space-y-2 border-b border-white/5 pb-4 last:border-none last:pb-0"
+            >
+              <p className="text-sm font-semibold text-slate-100">
+                <strong>{entry.title}</strong>
+              </p>
+              {entry.body.map((paragraph) => (
+                <p key={paragraph} className="text-sm leading-relaxed text-slate-300">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </section>

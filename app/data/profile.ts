@@ -22,12 +22,18 @@ export type Project = {
 export type StackItem = {
   name: string;
   score: number;
+  icon?: string;
 };
 
 export type StackGroup = {
   title: string;
   icon: string;
   items: StackItem[];
+};
+
+export type ExperienceEntry = {
+  title: string;
+  body: string[];
 };
 
 export type ProfileData = {
@@ -49,11 +55,9 @@ export type ProfileData = {
   highlights: Highlight[];
   stats: Stat[];
   stackGroups: StackGroup[];
-  experience: string[];
+  experience: ExperienceEntry[];
   projects: Project[];
   contactEmail: string;
-  linkedInLabel: string;
-  linkedInUrl: string;
 };
 
 export const profileData: ProfileData = {
@@ -61,7 +65,7 @@ export const profileData: ProfileData = {
   role: "Analista Programador | Cientista de Dados",
   location: "Brasil · Remoto/Presencial",
   availability: "Disponivel para novos desafios",
-  avatarSrc: "/assets/images/son.jpg",
+  avatarSrc: "/assets/images/foto_son_cut.PNG",
   avatarAlt: "Foto de perfil de Anderson Seixas",
   status: "Disponivel para novos desafios",
   headlineLead: "Analista programador e",
@@ -82,7 +86,7 @@ export const profileData: ProfileData = {
   aboutBody: [
     "Sou Analista Programador e Cientista de Dados com mais de 8 anos atuando entre desenvolvimento de software, dados e transformacao digital. Trabalho conectando codigo, dados e pessoas para criar solucoes que funcionam no mundo real, nao so em slides bonitos.",
     "Atuo desde a base tecnica - arquitetura, backend, pipelines de dados, automacoes - ate a camada estrategica, apoiando tomada de decisao com metricas, indicadores e modelos analiticos. Ja desenvolvi aplicacoes web, dashboards analiticos, sistemas internos, plataformas educacionais gamificadas e solucoes orientadas a dados para governo, educacao e pesquisa.",
-    "Tenho forte atuacao em educacao tecnologica, ciencia de dados aplicada e inovacao no setor publico, sempre com um pe na engenharia e outro no impacto social. Se o problema e complexo, melhor ainda - e ai que eu fico confortavel.",
+    "Tenho forte atuacao em educacao tecnologica, ciencia de dados aplicada e inovacao no setor publico, sempre com um pe na engenharia e outro no impacto social. Se o problema é complexo, melhor ainda - desafios são de longe o meu passatempo.",
   ],
   mission:
     "Missao pessoal: transformar dados e software em decisoes melhores, processos mais inteligentes e aprendizado mais envolvente.",
@@ -114,36 +118,53 @@ export const profileData: ProfileData = {
     },
   ],
   stats: [
-    { label: "Anos em tecnologia", value: "8+" },
-    { label: "Produtos entregues", value: "24" },
-    { label: "Pipelines em producao", value: "40+" },
-    { label: "Dashboards ativos", value: "18" },
+    { label: "Anos em tecnologia", value: "10" },
+    { label: "Produtos entregues", value: "12" },
+    { label: "Pipelines em producao", value: "9" },
+    { label: "Dashboards ativos", value: "2" },
   ],
   stackGroups: [
     {
       title: "Desenvolvimento",
       icon: "code",
       items: [
-        { name: "Python (Pandas, Streamlit, automacoes, scripts, APIs)", score: 92 },
-        { name: "PHP (Laravel)", score: 80 },
-        { name: "JavaScript / TypeScript", score: 88 },
-        { name: "Node.js", score: 84 },
-        { name: "HTML5, CSS3, Bootstrap, Tailwind", score: 86 },
-        { name: "Next.js (App Router)", score: 82 },
+        {
+          name: "Python (Pandas, Streamlit, automacoes, scripts, APIs)",
+          score: 92,
+          icon: "python",
+        },
+        { name: "PHP (Laravel)", score: 80, icon: "php" },
+        { name: "JavaScript / TypeScript", score: 88, icon: "javascript" },
+        { name: "Node.js", score: 84, icon: "node.js" },
+        {
+          name: "HTML5, CSS3, Bootstrap, Tailwind",
+          score: 86,
+          icon: "html5",
+        },
+        { name: "Next.js (App Router)", score: 82, icon: "next.js" },
       ],
     },
     {
       title: "Dados & Analytics",
       icon: "query_stats",
       items: [
-        { name: "Ciencia de Dados aplicada", score: 90 },
-        { name: "Analise Exploratoria (EDA)", score: 88 },
-        { name: "Dashboards interativos (Streamlit, Plotly)", score: 86 },
-        { name: "Modelagem preditiva", score: 82 },
-        { name: "Indicadores e metricas para gestao", score: 85 },
+        { name: "Ciencia de Dados aplicada", score: 90, icon: "ciencia" },
+        { name: "Analise Exploratoria (EDA)", score: 88, icon: "eda" },
+        {
+          name: "Dashboards interativos (Streamlit, Plotly)",
+          score: 86,
+          icon: "dashboards",
+        },
+        { name: "Modelagem preditiva", score: 82, icon: "modelagem" },
+        {
+          name: "Indicadores e metricas para gestao",
+          score: 85,
+          icon: "indicadores",
+        },
         {
           name: "Integracao e tratamento de dados (CSV, APIs, Firestore, SQL)",
           score: 88,
+          icon: "integracao",
         },
       ],
     },
@@ -151,34 +172,66 @@ export const profileData: ProfileData = {
       title: "Infra, DevOps & Automacao",
       icon: "engineering",
       items: [
-        { name: "Docker e Docker Compose", score: 80 },
-        { name: "Linux (Ubuntu, WSL)", score: 84 },
-        { name: "Nginx", score: 72 },
-        { name: "Apache Airflow", score: 78 },
-        { name: "n8n (automacoes)", score: 76 },
-        { name: "Firebase / Firestore", score: 74 },
-        { name: "Git & GitHub", score: 86 },
+        { name: "Docker e Docker Compose", score: 80, icon: "docker" },
+        { name: "Linux (Ubuntu, WSL)", score: 84, icon: "linux" },
+        { name: "Nginx", score: 72, icon: "nginx" },
+        { name: "Apache Airflow", score: 78, icon: "airflow" },
+        { name: "n8n (automacoes)", score: 76, icon: "n8n" },
+        { name: "Firebase / Firestore", score: 74, icon: "firebase" },
+        { name: "Git & GitHub", score: 86, icon: "github" },
       ],
     },
     {
       title: "Educacao & Inovacao",
       icon: "school",
       items: [
-        { name: "Gamificacao educacional", score: 88 },
-        { name: "Metodologias ativas", score: 82 },
-        { name: "Projetos interdisciplinares", score: 85 },
-        { name: "Plataformas educacionais digitais", score: 83 },
-        { name: "Divulgacao cientifica e tecnologica", score: 80 },
+        { name: "Gamificacao educacional", score: 88, icon: "gamificacao" },
+        { name: "Metodologias ativas", score: 82, icon: "metodologias" },
+        {
+          name: "Projetos interdisciplinares",
+          score: 85,
+          icon: "projetos",
+        },
+        {
+          name: "Plataformas educacionais digitais",
+          score: 83,
+          icon: "plataformas",
+        },
+        {
+          name: "Divulgacao cientifica e tecnologica",
+          score: 80,
+          icon: "divulgacao",
+        },
       ],
     },
   ],
   experience: [
-    "Desenvolvimento Full Stack de aplicacoes web voltadas a gestao, dados e educacao.",
-    "Ciencia de Dados aplicada, com projetos que envolvem dados ambientais, indicadores publicos, saude, educacao e gestao.",
-    "Setor publico: atuacao em projetos de transformacao digital, automacao de servicos e portais institucionais.",
-    "Educacao tecnica e superior: criacao de experiencias gamificadas, projetos praticos e integracao real entre programacao, dados e resolucao de problemas.",
-    "Pesquisa e inovacao: projetos com foco em impacto social, ambiental e cientifico.",
-    "Ja atuei desde o \"conserta isso agora\" ate o \"vamos redesenhar tudo direito\". Spoiler: gosto mais da segunda opcao.",
+    {
+      title: "Iniciei minha trajetória profissional aos 14 anos como menor aprendiz",
+      body: [
+        "Conciliei trabalho e cursos no Senac enquanto construía disciplina e visão prática de mundo corporativo.",
+        "Antes de entrar na tecnologia, atuei em comércio e vendas, experiências que reforçaram minha resiliência e senso de urgência.",
+      ],
+    },
+    {
+      title: "Minha entrada na Tecnologia da Informação veio pelo Design Gráfico",
+      body: [
+        "Desenvolvi a habilidade desde a infância e atuei como designer e arte-finalista em empresas de personalização de camisetas enquanto cursava Sistemas para Internet.",
+        "Nesses ambientes comecei a criar soluções tecnológicas e automações que trouxeram ganhos significativos aos processos de gestão.",
+      ],
+    },
+    {
+      title: "Passei a oferecer serviços de desenvolvimento de software para pequenas empresas",
+      body: [
+        "Essa fase consolidou minha atuação como desenvolvedor autônomo e me levou a migrar para a docência em instituições como o Senac e o Instituto Federal de Rondônia.",
+      ],
+    },
+    {
+      title: "Atuação atual no Governo de Rondônia foca em Ciência de Dados, Inovação e Automação de Processos",
+      body: [
+        "Aplico tecnologia para gerar impacto e eficiência no setor público, unindo dados, automações e inovação aberta.",
+      ],
+    },
   ],
   projects: [
     {
@@ -222,7 +275,5 @@ export const profileData: ProfileData = {
       icon: "swap_horiz",
     },
   ],
-  contactEmail: "contato@exemplo.com",
-  linkedInLabel: "LinkedIn",
-  linkedInUrl: "#",
+  contactEmail: "anderson.6xas@gmail.com",
 };
