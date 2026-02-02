@@ -53,7 +53,8 @@ export default function ProfileHeaderSection({
                 alt={avatarAlt}
                 fill
                 className="object-cover"
-                sizes="96px"
+                sizes="160px"
+                quality={90}
                 priority
               />
             </a>
