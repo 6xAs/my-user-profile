@@ -6,6 +6,8 @@
   --surface: rgba(15, 23, 32, 0.75);
   --accent: #4ade80;
   --accent-strong: #34d399;
+  --font-space-grotesk: "Avenir Next", "Segoe UI", sans-serif;
+  --font-jetbrains-mono: "SFMono-Regular", "Menlo", "Monaco", monospace;
 }
 
 @theme inline {

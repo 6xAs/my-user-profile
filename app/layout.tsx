@@ -1,18 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const jetBrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Perfil | Analista Programador e Cientista de Dados",
@@ -26,12 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
-      <body
-        className={`${spaceGrotesk.variable} ${jetBrainsMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="pt-br" suppressHydrationWarning>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

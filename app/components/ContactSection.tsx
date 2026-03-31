@@ -1,3 +1,5 @@
+import CopyEmailButton from "./CopyEmailButton";
+
 type ContactSectionProps = {
   email: string;
 };
@@ -17,12 +19,11 @@ export default function ContactSection({ email }: ContactSectionProps) {
           detalhes do desafio e vamos desenhar um plano.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3 text-sm">
-          <a
-            href={`mailto:${email}`}
+          <CopyEmailButton
+            email={email}
+            label={email}
             className="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-5 py-2 font-medium text-slate-950 transition hover:brightness-110"
-          >
-            {email}
-          </a>
+          />
         </div>
       </div>
     </section>

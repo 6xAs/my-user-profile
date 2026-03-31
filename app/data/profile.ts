@@ -36,6 +36,21 @@ export type ExperienceEntry = {
   body: string[];
 };
 
+export type CertificationItem = {
+  title: string;
+  description: string;
+  link: string;
+  icon: string;
+  badge: string;
+};
+
+export type CertificationGroup = {
+  title: string;
+  description: string;
+  accent: string;
+  items: CertificationItem[];
+};
+
 export type ProfileData = {
   name: string;
   role: string;
@@ -57,6 +72,7 @@ export type ProfileData = {
   stackGroups: StackGroup[];
   experience: ExperienceEntry[];
   projects: Project[];
+  certifications: CertificationGroup[];
   contactEmail: string;
 };
 
@@ -273,6 +289,72 @@ export const profileData: ProfileData = {
       tags: ["Interoperabilidade", "Dados", "Arquitetura"],
       category: "Projetos web",
       icon: "swap_horiz",
+    },
+  ],
+  certifications: [
+    {
+      title: "Principais Certificações",
+      description:
+        "Formação acadêmica estruturante, conectando base técnica em desenvolvimento web com aprofundamento em dados e inteligência artificial.",
+      accent: "from-emerald-300/25 via-teal-300/10 to-cyan-300/20",
+      items: [
+        {
+          title: "Ensino Superior - Sistemas para Internet",
+          description:
+            "Graduação focada em desenvolvimento web, arquitetura de aplicações, experiência digital e fundamentos sólidos para criação de produtos conectados.",
+          link: "https://drive.google.com/file/d/1cNjsHY7KwCu4FeDEixywX8lYdgmmQnw5/view",
+          icon: "graduation",
+          badge: "Graduação",
+        },
+        {
+          title: "Pós-Graduação - Data Science com Inteligência Artificial",
+          description:
+            "Especialização orientada a análise de dados, modelagem preditiva, inteligência artificial aplicada e apoio à tomada de decisão com dados.",
+          link: "https://drive.google.com/file/d/1WALuS9N8F083p1-4ktmQTd88UtYa6lbT/view",
+          icon: "analytics",
+          badge: "Pós-Graduação",
+        },
+      ],
+    },
+    {
+      title: "Certificações em Docência e Pesquisa",
+      description:
+        "Reconhecimentos ligados à formação educacional, produção acadêmica e atuação em ensino, pesquisa e compartilhamento de conhecimento.",
+      accent: "from-amber-200/25 via-orange-200/10 to-rose-300/20",
+      items: [
+        {
+          title: "Docência e Pesquisa",
+          description:
+            "Coleção de certificados voltados à prática docente, metodologias de ensino, pesquisa aplicada e desenvolvimento acadêmico.",
+          link: "https://drive.google.com/drive/folders/1TLdO_z6sACTsm8TdjRnZ8_k4tzROpXPq",
+          icon: "teaching",
+          badge: "Pasta de certificados",
+        },
+      ],
+    },
+    {
+      title: "Certificações Corporativas",
+      description:
+        "Capacitações voltadas à melhoria contínua, gestão de processos e experiências institucionais com empresas e órgãos públicos.",
+      accent: "from-sky-300/25 via-indigo-300/10 to-slate-200/20",
+      items: [
+        {
+          title: "Lean Six Sigma",
+          description:
+            "Certificação orientada à eficiência operacional, redução de desperdícios, melhoria contínua e desenho de processos com foco em resultado.",
+          link: "https://drive.google.com/file/d/1IkK-YZ2kKHvNLMCZtgF5Bs1pHgEmpTgy/view",
+          icon: "process",
+          badge: "Melhoria contínua",
+        },
+        {
+          title: "Governos - Estadual e Federal",
+          description:
+            "Acervo de certificações ligadas a programas, capacitações e experiências desenvolvidas em contextos institucionais estaduais e federais.",
+          link: "https://drive.google.com/drive/folders/1XyIzOHnScBhu2JWSpQPb0mpCiEb0nnuh",
+          icon: "government",
+          badge: "Pasta institucional",
+        },
+      ],
     },
   ],
   contactEmail: "anderson.6xas@gmail.com",

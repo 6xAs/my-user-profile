@@ -1,4 +1,5 @@
 import AboutSection from "./components/AboutSection";
+import CertificationsSection from "./components/CertificationsSection";
 import ContactSection from "./components/ContactSection";
 import ExperienceSection from "./components/ExperienceSection";
 import ProfileHeaderSection from "./components/ProfileHeaderSection";
@@ -46,6 +47,7 @@ export default function Home() {
           />
           <StackSection stackGroups={profileData.stackGroups} />
           <ExperienceSection experience={profileData.experience} />
+          <CertificationsSection certifications={profileData.certifications} />
           <ProjectsSection
             projects={profileData.projects}
             categories={profileData.projectCategories}
